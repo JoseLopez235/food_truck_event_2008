@@ -5,4 +5,8 @@ class FoodTruck
     @inventory = {}
   end
 
+  def check_stock(item)
+    return 0 if @inventory[item].nil?
+    @inventory[item]
+  end
 end
