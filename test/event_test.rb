@@ -11,7 +11,7 @@ class EventTest < Minitest::Test
 
   def test_should_have_attributes
     event = Event.new("South Pearl Street Farmers Market")
-    assert_equal "South Pearl Street Farmers Market", food_truck.name
+    assert_equal "South Pearl Street Farmers Market", event.name
     assert_equal [], event.food_trucks
   end
 end
