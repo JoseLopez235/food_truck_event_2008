@@ -10,6 +10,8 @@ class FoodTruckTest < Minitest::Test
 
   def test_should_have_attributes
     food_truck = FoodTruck.new("Rocky Mountain Pies")
-    assert_equal "Rocky Mountain Pies", item2.name
+    assert_equal "Rocky Mountain Pies", food_truck.name
+    expect = {}
+    assert_equal expect, food_truck.inventory
   end
 end
