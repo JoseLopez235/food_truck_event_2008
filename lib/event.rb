@@ -20,4 +20,20 @@ class Event
       food_truck.inventory_item_names.include?(item.name)
     end
   end
+
+  def total_inventory
+    total_inventory = {}
+    @food_trucks. each do |food_truck|
+      food_truck.inventory.each do |item, quantity|
+        if total_inventory[item].nil?
+          total_inventory[item] = {quantity: quantity, food_trucks: [food_truck]}
+
+        else
+          total_inventory[item][:quantity] += quantity
+          total_inventory[item][:food_trucks] << food_truck
+        end
+      end
+    end
+    total_inventory
+  end
 end
