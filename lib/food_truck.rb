@@ -17,4 +17,10 @@ class FoodTruck
       @inventory[item] += quantity
     end
   end
+
+  def inventory_item_names
+    @inventory.map do |key, value|
+      key.name
+    end
+  end
 end

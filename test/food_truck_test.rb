@@ -36,4 +36,14 @@ class FoodTruckTest < Minitest::Test
     expect = {item1 => 55, item2 => 12}
     assert_equal expect, food_truck.inventory
   end
+
+  def test_inventory_item_names
+    food_truck = FoodTruck.new("Rocky Mountain Pies")
+    item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
+    item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
+    food_truck.stock(item1, 30)
+    food_truck.stock(item2, 12)
+    expect = ['Peach Pie (Slice)', 'Apple Pie (Slice)']
+    assert_equal expect, food_truck.inventory_item_names
+  end
 end
