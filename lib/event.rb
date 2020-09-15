@@ -35,4 +35,12 @@ class Event
     end
     total_inventory
   end
+
+  def sorted_item_list
+    item_list = []
+    @food_trucks.each do |food_truck|
+      item_list << food_truck.inventory_item_names
+    end
+    item_list = item_list.flatten!.uniq.sort
+  end
 end
