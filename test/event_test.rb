@@ -78,4 +78,13 @@ class EventTest < Minitest::Test
     @event.add_food_truck(@food_truck3)
     assert_equal [@item1], @event.overstocked_items
   end
+
+  def test_sorted_item_list
+    @food_truck3.stock(@item3, 10)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect = ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"]
+    assert_equal expect, @event.sorted_item_list
+  end
 end

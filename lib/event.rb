@@ -27,7 +27,6 @@ class Event
       food_truck.inventory.each do |item, quantity|
         if total_inventory[item].nil?
           total_inventory[item] = {quantity: quantity, food_trucks: [food_truck]}
-
         else
           total_inventory[item][:quantity] += quantity
           total_inventory[item][:food_trucks] << food_truck
